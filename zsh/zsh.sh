@@ -3,7 +3,7 @@
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# zsh dotfiles
-cp zsh/.zshrc $HOME/
-cp zsh/.aliases.zsh $HOME/
-cp zsh/.fzf.zsh $HOME/
+# install shell integration
+curl -L https://iterm2.com/shell_integration/zsh \
+-o ~/.iterm2_shell_integration.zsh
+

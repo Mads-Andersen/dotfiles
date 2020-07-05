@@ -1,0 +1,12 @@
+Host *
+	ForwardAgent yes
+	UseKeychain yes
+	AddKeysToAgent yes
+
+Host bastion
+	Hostname 34.248.239.205 	
+	User admin
+
+Host 172.31.*
+	User admin
+	ProxyJump bastion

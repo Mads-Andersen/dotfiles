@@ -1,11 +1,7 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=/node_modules/.bin:$PATH
 
-export GOOGLE_CLOUD_KEYFILE_JSON=/Users/mads/Projects/terraform-init/CREDENTIALS_FILE.json
+source $HOME/Projects/Dotfiles/zsh/.exports.zsh
+source $HOME/Projects/Dotfiles/zsh/.aliases.zsh
+# source $HOME/.aliases
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -18,20 +14,6 @@ ZSH_THEME="robbyrussell"
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# nvm helper
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-if [[ -f .nvmrc && -r .nvmrc ]]; then
-	nvm use
-elif [[ $(nvm version) != $(nvm version default)  ]]; then
-	echo "Reverting to nvm default version"
-	nvm use default
-fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -75,8 +57,7 @@ load-nvmrc
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(git aws)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -107,20 +88,41 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+source "${HOME}/.iterm2_shell_integration.zsh"
+
+iterm2_print_user_vars() {
+	#iterm2_set_user_var nodeVersion $(node -v)
+	#KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+	#iterm2_set_user_var kubeContext $KUBECONTEXT
+	#iterm2_set_user_var awsProfile $AWS_PROFILE
+}
+
+# https://www.cloudar.be/awsblog/using-aws-vault-with-mulitple-browser-windows/
+function aws-console() {
+  user_data_dir=$(mktemp -d /tmp/awschrome_userdata.XXXXXXXX)
+  disk_cache_dir=$(mktemp -d /tmp/awschrome_cache.XXXXXXXX)
+
+  browser='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  url=$(aws-vault login ${AWS_VAULT} --duration=12h --stdout --prompt osascript)
+
+  "${browser}" \
+    --no-first-run \
+    --no-default-browser-check \
+    --user-data-dir=${user_data_dir} \
+    --disk-cache-dir=${disk_cache_dir} \
+    --new-window \
+    "${url}" \
+    >/dev/null 2>&1 &
+  disown
+}
+
+function aws-account() {
+  profile="$1"
+  aws-vault exec ${profile} --no-session
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-
-source $HOME/.aliases
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mads/google-cloud-sdk/completion.zsh.inc'; fi
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

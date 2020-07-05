@@ -1,0 +1,11 @@
+windows:
+  - name: Default
+    root: ~/Projects
+    layout: even-horizontal
+    panes:
+      - commands:
+          - clear
+        focus: true
+      - commands:
+          - cd dotfiles
+          - clear

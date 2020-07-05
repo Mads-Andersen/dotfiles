@@ -1,13 +1,15 @@
 #!/bin/bash
 
-xcode-select --install # xcode command line tools
+# Prereq Install
+xcode-select --install
+xcodebuild -license accept
 
 # Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
-bash homebrew/brew.sh;
-bash homebrew/brew-cask.sh;
 
-bash zsh/zsh.sh; # Zsh
-bash vscode/vscode.sh; # Visual Studio Code
+# Install
+bash zsh/zsh.sh;
+bash Brewfile.sh
 
-cp git/.gitconfig $HOME/.gitconfig; # git
+# Configure
+bash symlink.sh

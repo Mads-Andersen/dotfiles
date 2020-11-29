@@ -43,8 +43,8 @@ brew cask install visual-studio-code;
 brew cask install iterm2;
 brew cask install docker;
 brew cask install adoptopenjdk14;
-brew cask install discord;
-brew cask install cold-turkey-blocker;
+brew cask install insomnia;
+brew cask install aws-vault;
 
 # Apps
 brew cask install slack;
@@ -58,7 +58,8 @@ brew cask install slack;
 brew cask install alfred;
 brew cask install intellij-idea-ce;
 brew cask install lens;
-brew cask install aws-vault;
+brew cask install discord;
+brew cask install cold-turkey-blocker;
 
 # Install apps via mas-cli
 # mas signin bjerre@gmail.com

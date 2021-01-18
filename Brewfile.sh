@@ -21,6 +21,8 @@ brew install exa;
 brew install cloc;
 brew install yarn;
 brew install hugo;
+brew install elixir;
+mix local.hex;
 
 #node-versioning
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.1/install.sh | bash;

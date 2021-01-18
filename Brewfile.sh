@@ -22,6 +22,7 @@ brew install cloc;
 brew install yarn;
 brew install hugo;
 brew install asdf;
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
 brew install elixir;
 mix local.hex;
 

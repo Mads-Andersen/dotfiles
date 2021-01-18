@@ -35,6 +35,7 @@ avn setup
 npm install -g expo-cli;
 npm install -g less;
 npm install -g uglifycss;
+npm install -g typescript;
 
 # Taps
 brew tap adoptopenjdk/openjdk;

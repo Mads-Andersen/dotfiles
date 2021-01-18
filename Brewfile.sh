@@ -21,6 +21,7 @@ brew install exa;
 brew install cloc;
 brew install yarn;
 brew install hugo;
+brew install asdf;
 brew install elixir;
 mix local.hex;
 

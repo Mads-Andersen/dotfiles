@@ -42,6 +42,7 @@ brew tap adoptopenjdk/openjdk;
 
 # Browsers
 brew cask install google-chrome;
+brew cask install firefox;
 
 # Code
 brew cask install visual-studio-code;

@@ -21,6 +21,7 @@ brew install exa;
 brew install cloc;
 brew install yarn;
 brew install hugo;
+brew install jsonpp;
 brew install asdf;
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
 brew install elixir;

@@ -28,4 +28,5 @@ alias snippets="code ~/projects/snippets"
 alias dev="aws-account dev"
 alias staging="aws-account staging"
 alias production="aws-account production"
+alias gm-production="aws-account gm-production"
 

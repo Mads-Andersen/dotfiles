@@ -10,3 +10,29 @@ Host bastion
 Host 172.31.*
 	User admin
 	ProxyJump bastion
+
+# goodmonday.io
+
+Host production.gm
+	Hostname 3.126.5.67
+	user ubuntu
+
+Host demo.gm
+	Hostname 18.197.25.159
+	user ubuntu
+
+# feathers
+Host main-server.gm
+	Hostname 18.184.250.231
+	user ubuntu
+
+Host conval.gm
+	Hostname 3.124.102.238
+	user ubuntu
+
+Host build-agent2.gm
+	Hostname 18.157.193.76
+	user ubuntu
+
+
+

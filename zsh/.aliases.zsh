@@ -3,6 +3,8 @@ alias aliases="vi ~/.aliases.zsh"
 
 # Files
 alias projects="cd ~/Projects"
+alias work="cd ~/Projects/good-monday"
+alias good-monday="cd ~/Projects/good-monday"
 alias dotfiles="cd ~/Projects/dotfiles"
 alias infrastructure="cd ~/projects/infrastructure"
 

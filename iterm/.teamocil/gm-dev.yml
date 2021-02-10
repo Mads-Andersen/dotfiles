@@ -1,0 +1,18 @@
+windows:
+  - name: GoodMonday - dev
+    root: ~/Projects/good-monday
+    layout: tiled
+    panes:
+      - commands:
+          - cd backend
+          - clear
+        focus: true
+      - commands:
+          - cd client-backend
+          - clear
+      - commands:
+          - cd backoffice-vue
+          - clear
+      - commands:
+          - cd platform-v2
+          - clear

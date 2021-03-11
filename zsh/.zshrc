@@ -122,6 +122,20 @@ function aws-account() {
   aws-vault exec ${profile} --no-session
 }
 
+function vscodetmp () {
+  local repo=$1
+  [[ ! $repo =~ "https://*" ]] && repo="https://github.com/${repo}"
+  local temp="$(mktemp -d)"
+  echo "git@github.com:${repo}"
+  git clone --depth=1 "git@github.com:${repo}" "${temp}"
+  code --wait -n "${temp}"
+  rm -rf "${temp}"
+}
+
+function run-migrations () {
+
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

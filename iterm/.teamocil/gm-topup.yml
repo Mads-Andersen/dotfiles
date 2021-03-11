@@ -1,7 +1,7 @@
 windows:
   - name: GoodMonday - Topup
     root: ~/Projects/good-monday
-    layout: main-vertical
+    layout: tiled
     panes:
       - commands:
           - cd backend
@@ -9,6 +9,9 @@ windows:
         focus: true
       - commands:
           - cd client-backend
+          - clear
+      - commands:
+          - cd backend/apps/topup
           - clear
       - commands:
           - cd inventory-service

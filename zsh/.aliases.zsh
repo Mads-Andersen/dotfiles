@@ -5,6 +5,9 @@ alias aliases="vi ~/.aliases.zsh"
 alias projects="cd ~/Projects"
 alias work="cd ~/Projects/good-monday"
 alias good-monday="cd ~/Projects/good-monday"
+alias backend="cd ~/Projects/good-monday/backend"
+alias platform="cd ~/Projects/good-monday/platform-v2"
+alias backoffice="cd ~/Projects/good-monday/backoffice-vue"
 alias dotfiles="cd ~/Projects/dotfiles"
 alias infrastructure="cd ~/projects/infrastructure"
 
@@ -33,3 +36,5 @@ alias staging="aws-account staging"
 alias production="aws-account production"
 alias gm-production="aws-account gm-production"
 
+# git
+alias git-count-commits="git rev-list --count HEAD ^master"

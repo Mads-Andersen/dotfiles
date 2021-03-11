@@ -53,6 +53,7 @@ brew cask install adoptopenjdk14;
 brew cask install insomnia;
 brew cask install aws-vault;
 brew cask install pgadmin4;
+brew cask install sublime-text;
 
 # Apps
 brew cask install slack;

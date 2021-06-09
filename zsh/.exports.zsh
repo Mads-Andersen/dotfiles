@@ -11,3 +11,7 @@ export EDITOR='vi'
 export VISUAL='vi'
 
 export DOTFILES=$HOME/Projects/Dotfiles
+
+# Keep iex history
+export ERL_AFLAGS="-kernel shell_history enabled"
+

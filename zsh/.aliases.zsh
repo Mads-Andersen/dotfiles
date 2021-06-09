@@ -6,10 +6,15 @@ alias projects="cd ~/Projects"
 alias work="cd ~/Projects/good-monday"
 alias good-monday="cd ~/Projects/good-monday"
 alias backend="cd ~/Projects/good-monday/backend"
+alias frontend="cd ~/Projects/good-monday/good-monday"
+alias monorepo="cd ~/Projects/good-monday/good-monday"
 alias platform="cd ~/Projects/good-monday/platform-v2"
 alias backoffice="cd ~/Projects/good-monday/backoffice-vue"
 alias dotfiles="cd ~/Projects/dotfiles"
 alias infrastructure="cd ~/projects/infrastructure"
+
+# Commands
+alias run-db="sh ~/projects/good-monday/gm-database/run.sh"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -26,6 +31,8 @@ alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias reload="source ~/.zshrc"
 alias llp="ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 alias erlang-version="erl -eval '{ok, Version} = file:read_file(filename:join([code:root_dir(), \"releases\", erlang:system_info(otp_release), \"OTP_VERSION\"])), io:fwrite(Version), halt().' -noshell"
+alias git-now="LC_ALL=C GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --no-edit --date \"$(date)\""
+
 
 # Projects
 alias snippets="code ~/projects/snippets"

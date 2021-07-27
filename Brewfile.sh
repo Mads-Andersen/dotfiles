@@ -2,6 +2,7 @@
 
 brew install python;
 brew install python3;
+brew install jq;
 brew install vim;
 brew install htop;
 brew install fzf;

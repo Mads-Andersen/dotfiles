@@ -2,6 +2,7 @@ Host *
 	ForwardAgent yes
 	UseKeychain yes
 	AddKeysToAgent yes
+	ServerAliveInterval 240
 
 Host bastion
 	Hostname 34.248.239.205 	
@@ -12,27 +13,30 @@ Host 172.31.*
 	ProxyJump bastion
 
 # goodmonday.io
-
-Host production.gm
-	Hostname 3.126.5.67
+Host conval.gm
+	Hostname 3.124.102.238
 	user ubuntu
+
+Host seed.gm
+        Hostname 3.121.199.184
+        user ubuntu
 
 Host demo.gm
 	Hostname 18.197.25.159
 	user ubuntu
 
-# feathers
-Host main-server.gm
-	Hostname 18.184.250.231
-	user ubuntu
-
-Host conval.gm
-	Hostname 3.124.102.238
+Host production.gm
+	Hostname 3.126.5.67
 	user ubuntu
 
 Host build-agent2.gm
 	Hostname 18.157.193.76
 	user ubuntu
 
+Host prod-main-server
+	Hostname 18.184.250.231
+	user ubuntu
 
-
+Host billie
+	Hostname 3.122.236.181
+	user ubuntu

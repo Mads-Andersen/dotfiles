@@ -12,9 +12,13 @@ alias platform="cd ~/Projects/good-monday/platform-v2"
 alias backoffice="cd ~/Projects/good-monday/backoffice-vue"
 alias dotfiles="cd ~/Projects/dotfiles"
 alias infrastructure="cd ~/projects/infrastructure"
+alias fit="cd ~/projects/fit"
 
 # Commands
 alias run-db="sh ~/projects/good-monday/gm-database/run.sh"
+alias run-warehouse-db="sh ~/projects/good-monday/backend/apps/warehouse/run.sh"
+alias migrate-db="(cd ~/projects/good-monday/backend && mix ecto.migrate)"
+alias migrate-warehouse-db="(cd ~/projects/good-monday/backend && mix ecto.migrate --repo Warehouse.Repo)"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -31,7 +35,9 @@ alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias reload="source ~/.zshrc"
 alias llp="ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 alias erlang-version="erl -eval '{ok, Version} = file:read_file(filename:join([code:root_dir(), \"releases\", erlang:system_info(otp_release), \"OTP_VERSION\"])), io:fwrite(Version), halt().' -noshell"
-alias git-now="LC_ALL=C GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --no-edit --date \"$(date)\""
+alias git-now="git commit --amend --date=\"now\""
+alias status-code="echo $?"
+
 
 
 # Projects

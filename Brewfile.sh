@@ -18,7 +18,6 @@ brew install kubectl;
 brew install terraform;
 brew install tree;
 brew install ansible;
-brew install exa;
 brew install cloc;
 brew install yarn;
 brew install hugo;
@@ -55,10 +54,10 @@ brew cask install insomnia;
 brew cask install aws-vault;
 brew cask install pgadmin4;
 brew cask install sublime-text;
+brew install pulumi;
 
 # Apps
 brew cask install slack;
-brew cask install spotify;
 brew cask install mactex;
 brew cask install dropbox;
 brew cask install 1password;
@@ -66,7 +65,6 @@ brew cask install 1password-cli;
 brew cask install the-unarchiver;
 brew cask install slack;
 brew cask install alfred;
-brew cask install intellij-idea-ce;
 brew cask install lens;
 brew cask install discord;
 brew cask install cold-turkey-blocker;
